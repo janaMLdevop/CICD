@@ -28,7 +28,10 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest tests/  # Replace with your test folder
+          python scripts/data_ingestion.py
+          python scripts/data_preprocessing.py
+          python scripts/model_training.py
+          python scripts/model_evaluation.py
 
       - name: Build Docker image
         run: |
